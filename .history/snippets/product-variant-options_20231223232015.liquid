@@ -1,6 +1,4 @@
 {% comment %}
-  Updated this foe New Dropdown Sat 23 Dec 2017 17:11:54 GMT
-
   Renders product variant options
 
   Accepts:
@@ -15,7 +13,7 @@
     option: option,
     block: block
   %}
-{% endcomment %} 
+{% endcomment %}
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'

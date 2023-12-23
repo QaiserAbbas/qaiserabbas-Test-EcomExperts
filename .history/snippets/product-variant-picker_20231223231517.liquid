@@ -24,15 +24,15 @@
       {%- for option in product.options_with_values -%}
         {%- if option.name == 'Color' -%}
           <fieldset class="js product-form__input">
-            <legend class="form__label">{{ option.name }}</legend> 
+            <legend class="form__label">{{ option.name }}</legend>
             {% render 'product-variant-options-v1', product: product, option: option, block: block %}
-          </fieldset> 
+          </fieldset>
           {% else %}
           <fieldset class="js product-form__input qaInput">
             <legend class="form__label">{{ option.name }}</legend>
             {% render 'product-variant-options', product: product, option: option, block: block, showSelect: true %} 
-            <select class="qaInput-select">
-              <option value="Unselected" selected="selected">Unselected</option>
+            <select>
+              <option value="Select Size" selected="selected">Select Size</option>
               {%- for value in option.values -%}
               <option
                 value="{{ value | escape }}"

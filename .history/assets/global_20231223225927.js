@@ -949,7 +949,6 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('change', this.onVariantChange);
-    this.toggleAddButton(true, '', true);
   }
 
   onVariantChange() {
@@ -1005,7 +1004,7 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
-  
+
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);
     if (!shareButton || !shareButton.updateUrl) return;
@@ -1158,12 +1157,6 @@ class VariantSelects extends HTMLElement {
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
     if (!addButton) return;
-    const selectElement = document.querySelector('.qaInput select');
-    const selectedValue = selectElement.value;
-    if(selectedValue == 'Unselected'){
-      addButton.setAttribute('disabled', 'disabled');
-      return
-    }
 
     if (disable) {
       addButton.setAttribute('disabled', 'disabled');

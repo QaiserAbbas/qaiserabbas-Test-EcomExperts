@@ -6,7 +6,7 @@ if (!customElements.get('product-modal')) {
         super();
       }
 
-      hide() { 
+      hide() {
         super.hide();
       }
 

@@ -946,7 +946,7 @@ class SlideshowComponent extends SliderComponent {
 customElements.define('slideshow-component', SlideshowComponent);
 
 class VariantSelects extends HTMLElement {
-  constructor() {
+  constructor() { 
     super();
     this.addEventListener('change', this.onVariantChange);
     this.toggleAddButton(true, '', true);
@@ -1005,7 +1005,7 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
-  
+
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);
     if (!shareButton || !shareButton.updateUrl) return;

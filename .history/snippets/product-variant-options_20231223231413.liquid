@@ -1,6 +1,4 @@
 {% comment %}
-  Updated this foe New Dropdown Sat 23 Dec 2017 17:11:54 GMT
-
   Renders product variant options
 
   Accepts:
@@ -15,7 +13,7 @@
     option: option,
     block: block
   %}
-{% endcomment %} 
+{% endcomment %}
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'
@@ -64,12 +62,10 @@
         style="visibility:hidden;  height:0px;"
       {%- endif -%}
     >
-    <label
-      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      {%- if showSelect -%}
-        style="display:none; height:0px;"
-      {%- endif -%}
-    >
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"       {%- if showSelect -%}
+      style="display:none; height:0px;"
+    {%- endif -%}
+>
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
@@ -78,7 +74,7 @@
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
         selected="selected"
-      {% endif %}
+      {% endif %} 
     >
       {% if option_disabled -%}
         {{- 'products.product.value_unavailable' | t: option_value: value -}}
