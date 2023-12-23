@@ -1161,13 +1161,11 @@ class VariantSelects extends HTMLElement {
     const selectElement = document.querySelector('.qaInput select');
     const selectedValue = selectElement.value;
     var buyNowButton = document.querySelector("dynamic-checkout");
-    var buyNowButtonShopify = document.querySelector("shopify-buy-it-now-button");
-    
     if(selectedValue == 'Unselected'){
       addButton.setAttribute('disabled', true);
   
       buyNowButton.disabled = true;
-      buyNowButtonShopify.disabled = true;
+  
       return
     }
 
@@ -1177,7 +1175,6 @@ class VariantSelects extends HTMLElement {
     } else {
       addButton.removeAttribute('disabled');
       buyNowButton.disabled = false;
-      buyNowButtonShopify.disabled = false;
       addButtonText.textContent = window.variantStrings.addToCart;
     }
 
