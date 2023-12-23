@@ -69,7 +69,7 @@
         <label
           for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
         >
-          <img loading="eager" src="{{ product.variants[loopIndex].image | img_url: '' }}" alt="variant image" width="30" height="45" style="height:45px; width:30px; object-fit:contain"/>
+          <img loading="eager" src="{{ product.variants[loopIndex].image | img_url: '' }}" alt="variant image" width="30" height="30" style="height:30px; width:30px; object-fit:contain"/>
         </label>  
       {% else %}
         <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">

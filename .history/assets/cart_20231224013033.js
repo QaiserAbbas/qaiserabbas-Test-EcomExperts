@@ -343,20 +343,29 @@ class CartItems extends HTMLElement {
         // Handle removing items
         else if (!main_in_cart_already && item_in_cart_already) {
           let url_to_remove = `/cart/change?id=${item_to_add_variant_id}&quantity=0`;
-          fetch(url_to_remove, {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              window.location.href = "/cart";
+
+          // items.forEach((item) => {
+          //   if (item.variant_id === item_to_add_variant_id) {
+          //     url_to_remove = `/cart/change?id=${item.variant_id}&quantity=0`;
+          //   }
+          // });
+
+          if (url_to_remove) {
+            fetch(url_to_remove, {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
             })
-            .catch((error) => {
-              window.location.href = "/cart";
-              console.error("Error:", error);
-            });
+              .then((response) => response.json())
+              .then((data) => {
+                window.location.href = "/cart";
+              })
+              .catch((error) => {
+                window.location.href = "/cart";
+                console.error("Error:", error);
+              });
+          }
         }
       })
       .then((response) => {
