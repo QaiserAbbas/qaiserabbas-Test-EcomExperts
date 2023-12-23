@@ -142,3 +142,30 @@
     </div>
   </div>
 </noscript>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the select element and radio buttons
+    const selectElement = document.querySelector('.qaInput select');
+    const radioButtons = document.querySelectorAll('.qaInput input[type="radio"]');
+
+    // Add an event listener to the select element
+    selectElement.addEventListener('change', function() {
+        // Get the selected value from the select element
+        const selectedValue = this.value;
+        if(selectedValue == 'Select Size'){
+          window.selectedSize = null;
+        }else{
+          window.selectedSize = selectedValue;
+        }
+        // Loop through the radio buttons to find the one with the matching value
+        for (let radioButton of radioButtons) {
+            if (radioButton.value === selectedValue) {
+                radioButton.checked = true;
+                break; // Exit the loop once the matching radio button is found
+            }
+        }
+    });
+});
+</script>

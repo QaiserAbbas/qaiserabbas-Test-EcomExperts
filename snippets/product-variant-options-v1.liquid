@@ -68,8 +68,9 @@
       {% if product.variants[forloop.index0].image != blank and option.name == 'Color' %}
         <label
           for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-          style="background-image: url({{ product.variants[loopIndex].image | img_url: '' }});height:30px;width:30px;background-size: contain; background-repeat: no-repeat; background-position: center; padding: 20px; background-color: white;"
-        ></label>  
+        >
+          <img loading="eager" src="{{ product.variants[loopIndex].image | img_url: '' }}" alt="variant image" width="30" height="45" style="height:45px; width:30px; object-fit:contain"/>
+        </label>  
       {% else %}
         <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
           {{ value -}}
